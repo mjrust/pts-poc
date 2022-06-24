@@ -3,22 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 5050",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch --coverage",
+    "test:ci": "jest --ci",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:5050 cypress",
+    "e2e:headless": "start-server-and-test start http://localhost:5050 cypress:headless"
   },
   "dependencies": {
+    "@salesforce-ux/design-system": "^2.18.0",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@types/testing-library__jest-dom": "^5.14.5",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
+    "cypress": "^10.2.0",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
     "typescript": "4.7.4"
   }
 }
