@@ -1,9 +1,4 @@
-import type {
-  NextPage,
-  InferGetServerSidePropsType,
-  InferGetStaticPropsType,
-  GetServerSideProps,
-} from 'next';
+import type { InferGetStaticPropsType, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -22,23 +17,22 @@ interface IncidentsList {
   updatedAt: string;
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const endpoint = 'https://trust1-acquisitions.herokuapp.com/v1/incidents/';
   const data = await fetch(endpoint);
   const incidents: IncidentsList[] = await data.json();
 
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, state-while-revalidate=59'
-  );
   return { props: { incidents } };
 };
 
 function Incidents({
   incidents,
-}: InferGetServerSidePropsType<typeof getStaticProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
+      <Head>
+        <title>Incidents</title>
+      </Head>
       <nav className='slds-col'>
         <ul>
           <li>
