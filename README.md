@@ -8,19 +8,23 @@ First, run the development server:
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:5050) with your browser to see the result.
+Open [http://localhost:5050](http://localhost:5050) with your browser to see the result.
 
-## CREATING A BUNDLE
+## Creating a bundle
 
 ```zsh
 yarn build
 ```
 
-This will create an `out` directory
+This will create an `out` directory and to test static bundle, use serve
 
 ```zsh
 yarn global add serve
+```
+
 or
+
+```zsh
 npx serve
 ```
 
@@ -29,6 +33,8 @@ Run serve with any port you like
 ```zsh
 serve -p 5050
 ```
+
+Your bundle should be working!
 
 ## Learn More
 
