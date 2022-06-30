@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+import { Button } from '@salesforce/design-system-react';
 
 const Home: NextPage = () => {
   const wrapperStyles = `slds-grid slds-wrap ${styles.wrapper}`;
@@ -35,6 +36,12 @@ const Home: NextPage = () => {
 
       <main className='slds-col slds-card slds-p-around--xx-large'>
         Hello, again!
+        <div className='slds-box slds-p-around--large'>
+          <Button
+            label='Hello Button'
+            onClick={() => console.log('Hi there!')}
+          />
+        </div>
       </main>
 
       <footer className='slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-p-vertical_medium'>

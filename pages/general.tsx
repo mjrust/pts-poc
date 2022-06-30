@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function General() {
-  const [generalMessages, setGeneralMessages] = useState(null);
+  const [generalMessages, setGeneralMessages] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
